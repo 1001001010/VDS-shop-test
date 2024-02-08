@@ -8,10 +8,10 @@
     <meta name="description"
       content="Крупнейший провайдер VDS серверов. Гибкие тарифы, высокая производительность, круглосуточная поддержка." />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-    <link href="" rel="stylesheet" />
-    {{-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="{{ asset('../assets/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="assets/img/fav.svg" type="image/x-icon" />
 </head>
 
@@ -19,7 +19,7 @@
     <div id="app">
       <header-component></header-component>
     </div>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/js/app.js')
 </body>
 
 </html>

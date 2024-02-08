@@ -2,15 +2,15 @@
 <header class="header">
       <div class="container flex align-center justify-between">
         <div class="header__left flex align-center">
-          <a href="/" class="header__logo">
-            <img src="/img/logo.svg" alt="Logo" />
+          <a href="" class="header__logo">
+            <img src="img/logo.svg" alt="Logo" />
           </a>
           <svg class="divider">
-            <use xlink:href="assets/img/icons.svg#divider"></use>
+            <use xlink:href="img/icons.svg#divider"></use>
           </svg>
           <div class="header__search flex align-center">
             <svg>
-              <use xlink:href="assets/img/icons.svg#search"></use>
+              <use xlink:href="img/icons.svg#search"></use>
             </svg>
             <input type="text" placeholder="Поиск" />
           </div>
@@ -22,14 +22,14 @@
             <li><a href="/">Информация</a></li>
           </ul>
           <svg class="divider">
-            <use xlink:href="assets/img/icons.svg#divider"></use>
+            <use xlink:href="img/icons.svg#divider"></use>
           </svg>
           <ul class="header__reg flex align-center">
             <li><a href="/registr.html">Регистрация</a></li>
             <li><a href="/sign_in.html">Вход</a></li>
           </ul>
         </div>
-        <div class="menu__icon">
+        <div class="menu__icon" @click="openMenu">
           <svg viewBox="0 0 800 650" class="menu__icon">
             <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" class="top">
             </path>
@@ -40,4 +40,32 @@
         </div>
       </div>
     </header>
+    <div class="menu__body">
+      <ul class="menu__list">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/buy_server.html">Серверы</a></li>
+        <li><a href="/">Информация</a></li>
+        <li><a href="/registr.html">Регистрация</a></li>
+        <li><a href="/sign_in.html">Вход</a></li>
+      </ul>
+    </div>
 </template>
+
+<script>
+  export default {
+  methods: {
+    openMenu(event) {
+      const icon = document.querySelector(".menu__icon");
+      const menuBody = document.querySelector(".menu__body");
+      menuBody.classList.toggle("_active");
+      icon.classList.toggle("_active");
+      const target = event.target;
+      const isClickInside = icon.contains(target);
+      if (!isClickInside && menuBody.classList.contains("_active") && !target.closest(".menu__body")) {
+        menuBody.classList.remove("_active");
+        icon.classList.remove("_active");
+      }
+    }
+  }
+};
+</script>
