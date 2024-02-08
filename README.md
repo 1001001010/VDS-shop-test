@@ -13,7 +13,7 @@
 
 **Установка**
 - Установить PHP <a>https://www.php.net/downloads</a>
-- Установить Nodejs <a>https://nodejs.org/en/download</a>
+- Установить Nodejs <a>https://nodejs.org/en/download</a> **Не меньше 14 версии**
 - Установить Composer <a>https://getcomposer.org/</a>
 - Клонировать репозиторий `git clone <link>`
 - Скачать модули node `npm install`
