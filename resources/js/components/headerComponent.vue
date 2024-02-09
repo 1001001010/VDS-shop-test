@@ -3,7 +3,7 @@
       <div class="container flex align-center justify-between">
         <div class="header__left flex align-center">
           <a href="" class="header__logo">
-            <img src="img/logo.svg" alt="Logo" />
+            <img src="../../../public/img/logo.svg" alt="Logo" />
           </a>
           <svg class="divider">
             <use xlink:href="img/icons.svg#divider"></use>
@@ -17,9 +17,16 @@
         </div>
         <div class="header__right flex align-center">
           <ul class="header__ul flex align-center">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/buy_server.html">Серверы</a></li>
-            <li><a href="/">Информация</a></li>
+            <li v-for="link in links">
+            <router-link aria-current="page" :to="link.href">{{ link.title }}</router-link>
+            </li>
+            <!-- <li>
+              <router-link aria-current="page" to="/">Главная</router-link>
+            </li>
+            <li>
+              <router-link aria-current="page" to="/servers">Серверы</router-link>
+            </li>
+            <li><router-link aria-current="page" to="/info">Информация</router-link></li>  -->
           </ul>
           <svg class="divider">
             <use xlink:href="img/icons.svg#divider"></use>
@@ -53,6 +60,24 @@
 
 <script>
   export default {
+  data(){
+    return{
+      links: [
+        {
+          title: 'Главная',
+          href: '/'
+        },
+        {
+          title: 'Серверы',
+          href: '/servers'
+        },
+        {
+          title: 'Информация',
+          href: '/info'
+        }
+      ]
+    }
+  },
   methods: {
     openMenu(event) {
       const icon = document.querySelector(".menu__icon");
