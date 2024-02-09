@@ -510,6 +510,10 @@ section {
     color: #d5eaff
 }
 
+.active p {
+    color: #d5eaff;
+}
+
 .first h1 {
     color: #d5eaff;
     font-size: 72px;

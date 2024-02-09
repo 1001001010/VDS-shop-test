@@ -18,15 +18,8 @@
         <div class="header__right flex align-center">
           <ul class="header__ul flex align-center">
             <li v-for="link in links">
-            <router-link aria-current="page" :to="link.href">{{ link.title }}</router-link>
+            <router-link aria-current="page" :to="link.href"><p>{{ link.title }}</p></router-link>
             </li>
-            <!-- <li>
-              <router-link aria-current="page" to="/">Главная</router-link>
-            </li>
-            <li>
-              <router-link aria-current="page" to="/servers">Серверы</router-link>
-            </li>
-            <li><router-link aria-current="page" to="/info">Информация</router-link></li>  -->
           </ul>
           <svg class="divider">
             <use xlink:href="img/icons.svg#divider"></use>
