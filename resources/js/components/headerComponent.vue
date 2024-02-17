@@ -27,8 +27,10 @@
           <use xlink:href="img/icons.svg#divider"></use>
         </svg>
         <ul class="header__reg flex align-center">
-          <li><router-link to="/register">Регистрация</router-link></li>
-          <li><router-link to="/login">Вход</router-link></li>
+          <div></div>
+          <li><router-link to="/register" v-if="!name">Регистрация</router-link></li>
+          <li><router-link to="/login" v-if="!name">Вход</router-link></li>
+          <li>{{ name }}</li>
         </ul>
       </div>
       <div class="menu__icon" @click="openMenu">
@@ -72,8 +74,9 @@ export default {
           title: 'Информация',
           href: '/info'
         }
-      ]
-    };
+      ],
+      name: localStorage.getItem('name')
+    }
   },
   methods: {
     openMenu(event) {

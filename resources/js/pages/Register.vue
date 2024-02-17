@@ -82,7 +82,11 @@ export default {
         onRegister() {
             this.errors = {},
                 axios.post('api/register', this.form).then(response => {
-                    if (response.data.success) location.reload();
+                    if (response.data.success) {
+                        localStorage.setItem('token', response.data.remember_token);
+                        localStorage.setItem('name', response.data.name);
+                        this.$route.push('/');
+                    }
                 });
         }
     }

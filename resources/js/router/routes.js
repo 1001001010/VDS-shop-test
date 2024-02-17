@@ -26,5 +26,4 @@ const routes = [
     //     component: Login 
     // }
 ];
-
 export default routes;
