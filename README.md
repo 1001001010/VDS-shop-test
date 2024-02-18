@@ -1,3 +1,6 @@
+<div align="center">
+  <img src="https://media.giphy.com/media/59d1zo8SUSaUU/giphy.gif" width="600" height="300"/>
+</div>
 <div id="badges" align="center">
     <p>About me:</p>
   <a href='https://t.me/lll10010010'>
