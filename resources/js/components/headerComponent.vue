@@ -30,7 +30,7 @@
           <div></div>
           <li><router-link to="/register" v-if="!name">Регистрация</router-link></li>
           <li><router-link to="/login" v-if="!name">Вход</router-link></li>
-          <li>{{ name }}</li>
+          <li><button @click="logout">{{ name }}</button></li>
         </ul>
       </div>
       <div class="menu__icon" @click="openMenu">
@@ -57,6 +57,7 @@
 
 <script>
 import { RouterLink } from 'vue-router';
+import axios from 'axios';
 
 export default {
   data() {
@@ -75,7 +76,8 @@ export default {
           href: '/info'
         }
       ],
-      name: localStorage.getItem('name')
+      name: localStorage.getItem('name'),
+      errors: {}
     }
   },
   methods: {
@@ -90,6 +92,17 @@ export default {
         menuBody.classList.remove("_active");
         icon.classList.remove("_active");
       }
+    },
+    logout() {
+      this.errors = {},
+        axios.post("api/logout", this.form).then(response => {
+          if (response.data.success) {
+            localStorage.setItem('token', '');
+            localStorage.setItem('name', '');
+            location.reload();
+          }
+
+        });
     }
   },
   components: { RouterLink }

@@ -73,30 +73,30 @@
     </div>
 </template>
 <script>
-// import axios from 'axios';
-// export default {
-//     data() {
-//         return {
-//             form: {
-//                 email: null,
-//                 password: null
-//             },
-//             errors: {}
-//         };
-//     },
-//     methods: {
-//         onRegister() {
-//             this.errors = {},
-//                 axios.post("api/login", this.form).then(response => {
-//                     if (response.data.success) {
-//                         localStorage.setItem('token', response.data.remember_token);
-//                         localStorage.setItem('name', response.data.name);
-//                         location.reload();
+import axios from 'axios';
+export default {
+    data() {
+        return {
+            form: {
+                email: null,
+                password: null
+            },
+            errors: {}
+        };
+    },
+    methods: {
+        onRegister() {
+            this.errors = {},
+                axios.post("api/login", this.form).then(response => {
+                    if (response.data.success) {
+                        localStorage.setItem('token', response.data.remember_token);
+                        localStorage.setItem('name', response.data.name);
+                        location.reload();
 
-//                     }
+                    }
 
-//                 });
-//         }
-//     }
-// }
+                });
+        }
+    }
+}
 </script>

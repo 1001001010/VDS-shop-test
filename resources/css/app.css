@@ -472,18 +472,17 @@ main {
     opacity: .7
 }
 
-.header__reg li:last-child button {
-    color: #000;
-    border-radius: 6px;
-    background: var(--1, radial-gradient(100.04% 100% at 50% 0, #66cbf9 0, #0fb5ff 100%))
-}
-
-
 .header__reg li a:hover {
     opacity: .7
 }
 
 .header__reg li:last-child a {
+    color: #000;
+    border-radius: 6px;
+    background: var(--1, radial-gradient(100.04% 100% at 50% 0, #66cbf9 0, #0fb5ff 100%))
+}
+
+.header__reg li:last-child button {
     color: #000;
     border-radius: 6px;
     background: var(--1, radial-gradient(100.04% 100% at 50% 0, #66cbf9 0, #0fb5ff 100%))

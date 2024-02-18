@@ -1,15 +1,14 @@
 <template>
-    <h1>HOME</h1>
-    {{ name }}
+    <HomeComponents />
 </template>
 
 <script>
+// import { defineComponent } from '@/vue';
+import HomeComponents from '../components/home/HomeComponents.vue'
 export default {
-    data() { }
-    // {
-    //     return {
-    //         name: localStorage.getItem('name')
-    //     }
-    // }
-}
+    components:
+    {
+        HomeComponents
+    },
+} 
 </script>

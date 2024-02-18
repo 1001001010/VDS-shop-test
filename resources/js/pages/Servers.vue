@@ -1,7 +1,14 @@
 <template>
-    <h1>SERVERS</h1>
+    <ServersComponents />
 </template>
 
 <script>
-    export default {}
+// import { defineComponent } from '@/vue';
+import ServersComponents from '../components/servers/ServersComponents.vue'
+export default {
+    components:
+    {
+        ServersComponents
+    },
+} 
 </script>
