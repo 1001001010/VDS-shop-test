@@ -27,10 +27,9 @@
           <use xlink:href="img/icons.svg#divider"></use>
         </svg>
         <ul class="header__reg flex align-center">
-          <div></div>
           <li><router-link to="/register" v-if="!name">Регистрация</router-link></li>
+          <li><button v-if="name" @click="logout">{{ name }}</button></li>
           <li><router-link to="/login" v-if="!name">Вход</router-link></li>
-          <li><button @click="logout">{{ name }}</button></li>
         </ul>
       </div>
       <div class="menu__icon" @click="openMenu">

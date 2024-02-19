@@ -3,9 +3,11 @@
         <div class="container">
             <div class="tovar">
                 <div class="country">
-                    <a href="/" class="table__item">Москва</a>
-                    <a href="/" class="table__item">Фалькенштайн</a>
-                    <a href="/" class="table__item">Хельсинки</a>
+                    <div v-for="location in locations">
+                        <router-link aria-current="page" :to="location.href">
+                            <p>{{ location.title }}</p>
+                        </router-link>
+                    </div>
                 </div>
                 <div class="Offers">
                     <div class="left_block">
@@ -265,3 +267,29 @@
         </div>
     </section>
 </template>
+
+<script>
+import { RouterLink } from 'vue-router';
+export default {
+    data() {
+        return {
+            locations: [
+                {
+                    title: 'Москва',
+                    href: '/servers/moscow'
+                },
+                {
+                    title: 'Фалькенштайн',
+                    href: '/servers/falkenstein'
+                },
+                {
+                    title: 'Хельсинки',
+                    href: '/servers/helsinki'
+                }
+            ],
+            errors: {}
+        }
+    },
+    components: { RouterLink }
+};
+</script>

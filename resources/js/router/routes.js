@@ -11,7 +11,17 @@ const routes = [
     },
     {
         path: '/servers', 
-        component: Servers 
+        component: Servers,
+        children: [
+            {
+              path: '', // leaves the path as '/servers'
+              component: Servers,
+            },
+            {
+              path: ':location', // adds a parameter for the location
+              component: Servers,
+            },
+        ],
     },
     {
         path: '/info', 
