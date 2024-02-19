@@ -1,3 +1,6 @@
+<div align="center">
+  <img src="https://media.giphy.com/media/59d1zo8SUSaUU/giphy.gif" width="600" height="300"/>
+</div>
 <div id="badges" align="center">
     <p>About me:</p>
   <a href='https://t.me/lll10010010'>
@@ -23,4 +26,5 @@
 - Создать файл конфигурации с примера `Cp .env.example .env`
 >*Файл .env* <br> - Отредактировать файл конфигурации
 - Создать ключ приложения `php artisan key:generate`
+- Мигрировать таблицы `php artisan migrate`
 - Запустить приложения `npm run dev` и `php artisan serve` 
