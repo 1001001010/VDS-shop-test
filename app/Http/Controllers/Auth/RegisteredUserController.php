@@ -83,6 +83,7 @@ class RegisteredUserController extends Controller
                 'success' => true,
                 'remember_token' => $remember_token,
                 'name' => $user->name,
+                'is_admin' => $user->is_admin,
             ]);
         } else {
                return response()->json([

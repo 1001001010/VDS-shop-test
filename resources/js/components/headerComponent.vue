@@ -22,6 +22,7 @@
               <p>{{ link.title }}</p>
             </router-link>
           </li>
+          <li :if="is_admin">Админка</li>
         </ul>
         <svg class="divider">
           <use xlink:href="img/icons.svg#divider"></use>
@@ -77,6 +78,7 @@ export default {
         }
       ],
       name: localStorage.getItem('name'),
+      is_admin: localStorage.getItem('is_admin'),
       errors: {}
     }
   },

@@ -95,6 +95,7 @@ export default {
                     if (response.data.success) {
                         localStorage.setItem('token', response.data.remember_token);
                         localStorage.setItem('name', response.data.name);
+                        localStorage.setItem('admin', response.data.is_admin);
                         this.$router.push('/');
                     }
 
