@@ -3,6 +3,7 @@ import Servers from '../pages/Servers.vue'
 import Info from '../pages/Info.vue'
 import Register from '../pages/Register.vue'
 import Login from '../pages/Login.vue'
+import NotFound from '../pages/not_found.vue'
 
 const routes = [
     {
@@ -25,15 +26,21 @@ const routes = [
     },
     {
         path: '/info', 
-        component: Info 
+        component: Info,
     },
     {
         path: '/register', 
-        component: Register 
+        component: Register,
+        meta: { hideHeaderFooter: true },
     },
     {
         path: '/login', 
-        component: Login 
+        component: Login,
+        meta: { hideHeaderFooter: true },
+    },
+    {
+        path: '/:pathMatch(.*)*', // this is the catch-all route
+        component: NotFound,
     }
 ];
 export default routes;

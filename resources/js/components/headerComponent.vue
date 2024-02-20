@@ -57,6 +57,7 @@
 <script>
 import { RouterLink } from 'vue-router';
 import axios from 'axios';
+import { useRoute } from 'vue-router';
 
 export default {
   data() {

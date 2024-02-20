@@ -60,7 +60,9 @@
             </ul>
         </form>
         <div class="text-center link__list">
-            <a href="/sign_in.html">Войти</a>
+            <router-link to="/login">
+                <a>Войти</a>
+            </router-link>
         </div>
     </div>
 </template>

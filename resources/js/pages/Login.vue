@@ -19,7 +19,9 @@
             <button type="submit" @click="onRegister" class="btn btn-primary">Submit</button>
         </form>
     </div> -->
-    <a href="/index.html" class="header__reg button__back">⬅ Назад</a>
+    <router-link to="/">
+        <a class="header__reg button__back">⬅ Назад</a>
+    </router-link>
     <div class="form_zapoln">
         <img class="right_photo" src="../../../public/img/glare/first_part-2.png" alt="blick" />
         <img class="left_photo" src="../../../public/img/glare/first_part-1.png" alt="blick" />
@@ -67,8 +69,10 @@
             </ul>
         </form>
         <div class="text-center link__list">
-            <a href="/reset_passw.html">Забыли пароль?</a>
-            <a href="/registr.html">Регистрация</a>
+            <a href="/">Забыли пароль?</a>
+            <router-link to="/register">
+                <a>Регистрация</a>
+            </router-link>
         </div>
     </div>
 </template>
