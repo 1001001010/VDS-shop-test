@@ -22,7 +22,7 @@
               <p>{{ link.title }}</p>
             </router-link>
           </li>
-          <li v-show="is_admin == '1'"><router-link to="/admin">Админка</router-link></li>
+          <li v-if="is_admin"><router-link to="/admin">Админка</router-link></li>
         </ul>
         <svg class=" divider">
           <use xlink:href="img/icons.svg#divider"></use>
@@ -78,7 +78,7 @@ export default {
         }
       ],
       name: localStorage.getItem('name'),
-      is_admin: localStorage.getItem('admin'),
+      is_admin: localStorage.getItem('admin') === '1',
       errors: {}
     }
   },
@@ -101,6 +101,7 @@ export default {
           if (response.data.success) {
             localStorage.setItem('token', '');
             localStorage.setItem('name', '');
+            localStorage.setItem('admin', '');
             location.reload();
           }
 

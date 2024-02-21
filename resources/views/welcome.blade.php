@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>ZETRIX - надежный хостинг для вашего бизнеса.</title>
     <meta name="keywords" content="VDS, servers, hosting, virtual dedicated servers" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description"
     content="Крупнейший провайдер VDS серверов. Гибкие тарифы, высокая производительность, круглосуточная поддержка." />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
