@@ -16,6 +16,7 @@
                 <input type="text" v-model="form.name" name="name" placeholder="Аркадий" class="input"
                     id="exampleInputName1" aria-describedby="namelHelp" />
             </div>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
             <div class="reg__input flex align-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <path
