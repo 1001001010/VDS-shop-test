@@ -46,11 +46,18 @@
   </header>
   <div class="menu__body">
     <ul class="menu__list">
-      <li><a href="/">Главная</a></li>
+      <!-- <li><a href="/">Главная</a></li>
       <li><a href="/buy_server.html">Серверы</a></li>
-      <li><a href="/">Информация</a></li>
-      <li><a href="/registr.html">Регистрация</a></li>
-      <li><a href="/sign_in.html">Вход</a></li>
+      <li><a href="/">Информация</a></li> -->
+      <li v-for="link in links">
+        <router-link aria-current="page" :to="link.href">
+          <a>{{ link.title }}</a>
+        </router-link>
+      </li>
+      <li v-if="is_admin"><router-link to="/admin">Админка</router-link></li>
+      <li><router-link to="/register" v-if="!name">Регистрация</router-link></li>
+      <li><a v-if="name" @click="logout">{{ name }}</a></li>
+      <li><router-link to="/login" v-if="!name">Вход</router-link></li>
     </ul>
   </div>
 </template>
