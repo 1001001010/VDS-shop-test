@@ -80,6 +80,9 @@ export default {
             errors: {}
         };
     },
+    created() {
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    },
     methods: {
         onRegister() {
             this.errors = {},

@@ -1,24 +1,4 @@
 <template>
-    <!-- <div>
-        <form methid="POST" onsubmit="return false;">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" v-model="form.email" name="email" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" v-model="form.password" name="password" class="form-control"
-                    id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" @click="onRegister" class="btn btn-primary">Submit</button>
-        </form>
-    </div> -->
     <router-link to="/">
         <a class="header__reg button__back">⬅ Назад</a>
     </router-link>
@@ -35,6 +15,7 @@
                 </svg>
                 <input type="email" v-model="form.email" placeholder="Example@gmail.com" class="input" />
             </div>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
             <div class="reg__input flex align-center">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -87,6 +68,9 @@ export default {
             },
             errors: {}
         };
+    },
+    created() {
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     },
     methods: {
         onRegister() {

@@ -71,6 +71,23 @@ class RegisteredUserController extends Controller
 
         $user = User::whereEmail($request->email)->first();
         
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $user = Auth::user();
+            $remember_token =  Hash::make(rand(11111111, 99999999));
+            $user->remember_token = $remember_token;
+            $user->save();
+            return response()->json([
+                'success' => true,
+                'remember_token' => $remember_token,
+                'name' => $user->name,
+                'is_admin' => $user->is_admin,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+
         if($user && Hash::check($request->password, $user->password)) {
             $remember_token =  Hash::make(rand(11111111, 99999999));
           
