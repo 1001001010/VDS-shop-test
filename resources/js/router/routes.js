@@ -41,6 +41,7 @@ const routes = [
     {
         path: '/:pathMatch(.*)*', // this is the catch-all route
         component: NotFound,
+        name: 'NotFound',
     }
 ];
 export default routes;
