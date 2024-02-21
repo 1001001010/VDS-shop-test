@@ -22,9 +22,9 @@
               <p>{{ link.title }}</p>
             </router-link>
           </li>
-          <li :if="is_admin">Админка</li>
+          <li v-show="is_admin == '1'"><router-link to="/login">Админка</router-link></li>
         </ul>
-        <svg class="divider">
+        <svg class=" divider">
           <use xlink:href="img/icons.svg#divider"></use>
         </svg>
         <ul class="header__reg flex align-center">
@@ -78,7 +78,7 @@ export default {
         }
       ],
       name: localStorage.getItem('name'),
-      is_admin: localStorage.getItem('is_admin'),
+      is_admin: localStorage.getItem('admin'),
       errors: {}
     }
   },
