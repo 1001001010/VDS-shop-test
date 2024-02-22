@@ -16,7 +16,7 @@ return new class extends Migration
             $table->boolean('ban')->default(false);
             $table->integer('unix');
             $table->integer('balance')->default(0);
-            $table->integer('total_servers')->default(0);
+            $table->integer('total_servers')->default(0); 
         });
     }
 

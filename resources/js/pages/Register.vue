@@ -5,6 +5,9 @@
     <div class="form_zapoln">
         <img class="right_photo" src="../../../public/img/glare/first_part-2.png" alt="blick" />
         <img class="left_photo" src="../../../public/img/glare/first_part-1.png" alt="blick" />
+        <p v-if="errors.name" class="text-danger">{{ errorsNameTranslations[0] }}</p>
+        <p v-if="errors.email" class="text-danger">{{ errorsEmailTranslations[0] }}</p>
+        <p v-if="errors.password" class="text-danger">{{ errorsPasswordTranslations[0] }}</p>
         <h1 class="text-center">Регистрация</h1>
         <form method="POST" onsubmit="return false;">
             <div class="reg__input flex align-center">
@@ -73,6 +76,9 @@ import axios from 'axios';
 export default {
     data() {
         return {
+            errorsNameTranslations: ['Имя обязательно для заполнения'],
+            errorsEmailTranslations: ['Неверный формат электронной почты'],
+            errorsPasswordTranslations: ['Пароль должен содержать минимум 6 символов'],
             form: {
                 name: null,
                 email: null,
@@ -86,12 +92,17 @@ export default {
     },
     methods: {
         onRegister() {
-            this.errors = {},
-                axios.post('api/register', this.form).then(response => {
+            axios.post('api/register', this.form)
+                .then(response => {
                     if (response.data.success) {
                         localStorage.setItem('token', response.data.remember_token);
                         localStorage.setItem('name', response.data.name);
                         this.$router.push('/');
+                    }
+                })
+                .catch(error => {
+                    if (error.response.status === 422) {
+                        this.errors = error.response.data.errors;
                     }
                 });
         }

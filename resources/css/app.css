@@ -337,6 +337,11 @@ main {
     margin: 0 auto
 }
 
+.text-danger {
+    text-align: center;
+    color: #ff4136;
+}
+
 .header {
     background-color: #08090b;
     padding: 28px 0;
