@@ -4,6 +4,7 @@ import Info from '../pages/Info.vue'
 import Register from '../pages/Register.vue'
 import Login from '../pages/Login.vue'
 import NotFound from '../pages/not_found.vue'
+import Profile from '../pages/Profile.vue'
 
 const routes = [
     {
@@ -39,7 +40,12 @@ const routes = [
         name: 'Login'
     },
     {
-        path: '/:pathMatch(.*)*', // this is the catch-all route
+        path: '/profile:id',
+        component: Profile,
+        name: 'Profile'
+    },
+    {
+        path: '/:pathMatch(.*)*',
         component: NotFound,
         name: 'NotFound',
     }

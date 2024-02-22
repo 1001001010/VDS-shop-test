@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,6 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::post('/login', [RegisteredUserController::class, 'login']);
 
 Route::post('/logout', [RegisteredUserController::class, 'logout']);
+
+Route::get('/open_profile', [ProfileController::class, 'openprofile']);
  
