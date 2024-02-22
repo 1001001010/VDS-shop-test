@@ -31,12 +31,12 @@ const routes = [
     {
         path: '/register', 
         component: Register,
-        meta: { hideHeaderFooter: true },
+        name: 'Register'
     },
     {
         path: '/login', 
         component: Login,
-        meta: { hideHeaderFooter: true },
+        name: 'Login'
     },
     {
         path: '/:pathMatch(.*)*', // this is the catch-all route

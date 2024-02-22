@@ -22,7 +22,7 @@ export default defineComponent({
     setup() {
         const route = useRoute();
         const currentPath = computed(() => route.path);
-        const hideHeaderFooter = computed(() => currentPath.value.includes('/login') || currentPath.value.includes('/register') || route.name === 'NotFound');
+        const hideHeaderFooter = computed(() => route.name === 'Login' || route.name === 'Register' || route.name === 'NotFound');
         return { hideHeaderFooter };
     },
 });
