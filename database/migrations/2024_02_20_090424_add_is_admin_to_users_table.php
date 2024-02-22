@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_admin')->default(false);
             $table->boolean('ban')->default(false);
-            $table->integer('unix')->default(0);
+            $table->integer('unix');
             $table->integer('balance')->default(0);
             $table->integer('total_servers')->default(0);
         });
