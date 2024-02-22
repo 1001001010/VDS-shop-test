@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_admin')->default(false);
+            $table->boolean('ban')->default(false);
+            $table->integer('unix')->default(0);
+            $table->integer('balance')->default(0);
+            $table->integer('total_servers')->default(0);
         });
     }
 
@@ -23,6 +27,10 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('is_admin');
+            $table->dropColumn('ban');
+            $table->dropColumn('unix');
+            $table->dropColumn('balance');
+            $table->dropColumn('total_servers');
         });
     }
 };

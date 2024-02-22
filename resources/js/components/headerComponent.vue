@@ -46,9 +46,6 @@
   </header>
   <div class="menu__body">
     <ul class="menu__list">
-      <!-- <li><a href="/">Главная</a></li>
-      <li><a href="/buy_server.html">Серверы</a></li>
-      <li><a href="/">Информация</a></li> -->
       <li v-for="link in links">
         <router-link aria-current="page" :to="link.href">
           <a>{{ link.title }}</a>
