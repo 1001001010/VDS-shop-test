@@ -29,7 +29,10 @@
         </svg>
         <ul class="header__reg flex align-center">
           <li><router-link to="/register" v-if="!name">Регистрация</router-link></li>
-          <li><button v-if="name" @click="logout">{{ name }}</button></li>
+          <!-- <li><button v-if="name" @click="logout">{{ name }}</button></li> -->
+          <!-- <li><button v-if="name" @click="logout">{{ name }}</button></li> -->
+          <li><router-link :to="`/profile/${name}`" v-if="name">Профиль</router-link></li>
+          <li><a v-if="name" @click="logout">Выйти</a></li>
           <li><router-link to="/login" v-if="!name">Вход</router-link></li>
         </ul>
       </div>
