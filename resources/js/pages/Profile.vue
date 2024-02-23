@@ -20,14 +20,19 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            users: []
+            users: [],
+            name: localStorage.getItem('name'),
         }
     },
     mounted() {
-        axios.get('/api/open_profile/1')
-            .then(response => {
-                this.users = response.data;
-            });
+        if (this.$route.params.name === this.name) {
+            axios.get('/api/open_profile/' + this.$route.params.name)
+                .then(response => {
+                    this.users = response.data;
+                });
+        } else {
+            this.$router.push('/');
+        }
     }
 }
 </script>
