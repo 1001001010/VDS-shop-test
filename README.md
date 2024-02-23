@@ -27,4 +27,8 @@
 >*Файл .env* <br> - Отредактировать файл конфигурации
 - Создать ключ приложения `php artisan key:generate`
 - Мигрировать таблицы `php artisan migrate`
-- Запустить приложения `npm run dev` и `php artisan serve` 
+- Запустить приложения `npm run dev` и `php artisan serve`
+
+---
+Возможности: 
+- Добавление root `php artisan db:seed --class=UsersTableSeeder`
