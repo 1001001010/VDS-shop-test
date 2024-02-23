@@ -1,10 +1,16 @@
 <template>
     <div>
         <ul>
-            <li v-for="user in users" :key="user.id">
-                {{ user.name }} ({{ user.email }})
+            <li>
+                Имя пользователя: {{ users.name }}
             </li>
-            <!-- <p>{{ users.name }}</p> -->
+            <li>
+                Почта: {{ users.email }}
+            </li>
+            <li>
+                Дата регистрации: {{ users.created_at }}
+            </li>
+            <li>Балланс: {{ users.balance }}₽</li>
         </ul>
     </div>
 </template>
@@ -18,7 +24,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('/api/open_profile')
+        axios.get('/api/open_profile/1')
             .then(response => {
                 this.users = response.data;
             });

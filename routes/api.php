@@ -26,5 +26,5 @@ Route::post('/login', [RegisteredUserController::class, 'login']);
 
 Route::post('/logout', [RegisteredUserController::class, 'logout']);
 
-Route::get('/open_profile', [ProfileController::class, 'openprofile']);
+Route::get('/open_profile/{name}', [ProfileController::class, 'openprofile']);
  

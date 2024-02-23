@@ -40,8 +40,8 @@ const routes = [
         name: 'Login'
     },
     {
-        path: '/profile:id',
-        component: Profile,
+        path: '/profile/:name', 
+        component: Profile, 
         name: 'Profile'
     },
     {

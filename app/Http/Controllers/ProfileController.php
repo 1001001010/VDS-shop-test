@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    public function openprofile(){
-        $users = DB::table('users')->get();
+    public function openprofile($id)
+    {
+        $users = DB::table('users')->find($id);
         return response()->json($users);
     }
 }

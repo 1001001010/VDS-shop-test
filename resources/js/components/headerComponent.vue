@@ -57,7 +57,8 @@
       <li v-if="is_admin"><router-link to="/admin">Админка</router-link></li>
       <li><router-link to="/register" v-if="!name">Регистрация</router-link></li>
       <!-- <li><a v-if="name" @click="logout">{{ name }}</a></li> -->
-      <li><router-link to="/profile" v-if="name">Профиль</router-link></li>
+      <li><router-link :to="`/profile/${id}`" v-if="name">Профиль</router-link></li>
+      <li><a v-if="name" @click="logout">Выйти</a></li>
       <li><router-link to="/login" v-if="!name">Вход</router-link></li>
     </ul>
   </div>
@@ -85,6 +86,7 @@ export default {
           href: '/info'
         }
       ],
+      id: localStorage.getItem('id'),
       name: localStorage.getItem('name'),
       is_admin: localStorage.getItem('admin') === '1',
       errors: {}
